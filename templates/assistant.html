@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Easy English</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="icon" href="https://anticsonline.uk/images/UK64.png" type="image/png">
+  <style>
+   header{
+    width: 100%;
+    background: #e6e6e6;
+    height: 10%;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    padding: 10px;
+   }
+   body{margin: 0; height: 100%;}
+   html{height: 100%;}
+   .header_p, a, body {
+    font-family: 'Roboto';
+    font-size: 20pt;
+   }
+.parent
+{
+	margin: 0;
+	height: 100%;
+	background: (100, 100, 100, 100);
+}
+.child
+{
+	display: inline-block;
+	width: 30%;
+}
+.question {
+width: 100%;
+height: 25%;
+top: 20%;
+}
+.answer {
+width: 100%;
+height: 25%;
+top: 60%;
+}
+.unhidden {
+width: 100%;
+height: 15%;
+top: 80%;
+display: flex;
+  justify-content: center;
+}
+.about{
+overflow: hidden;
+  background: #e6e6e6;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.button {
+    background-color: ;
+    border-radius: 20px;
+}
+a.eight {
+   border-radius: 10px;
+   background: #F5F5F5;
+   color: #000000;
+   padding: 15px 30px;
+   position: relative;
+   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+  </style>
+ </head>
+ <body>
+ <header>
+  <div class="parent">
+   <div class="child" style="width: 5%">&nbsp;
+   </div>
+   <div class="child">
+   <p class="header_p"><b>Easy English</b></p>
+</div>
+   <div class="child" style="width: 20%">
+   <p align="center"><a href="{{ name }}/" class="eight">Home</a></p>
+  </div>
+  <div class="child" style="width: 20%">
+   <p align="center"><a href="{{ name }}/trainer" class="eight">Trainer</a></p>
+  </div>
+   <div class="child" style="width: 20%">
+   <p align="center"><a href="{{ name }}/assistant" class="eight">Assistant</a></p>
+  </div>
+   <div>
+
+   </div>
+   </div>
+ </header>
+<div>
+<div class="question">
+     <p>&nbsp;</p>
+    {% if answers %}
+    {% for answer in answers %}
+        <p align="center" style="font-size: 40pt;">{{ answer }}</p>
+    {% endfor %}
+    {% endif %}
+ </div>
+
+
+ <div class="unhidden">
+     <form method="post" style="width: 90%; height: 100%;">
+        <p><input type="text" name="query" style="width: 55%; font-size: 40pt;" value="{{ current_text }}">
+         <input type="submit" style="width: 40%; font-size: 40pt;" name="continue" value="Search" class="button"></p>
+     </form>
+
+ </div>
+</div>
+
+ </body>
+</html>
